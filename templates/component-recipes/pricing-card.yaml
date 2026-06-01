@@ -1,0 +1,61 @@
+﻿id: pricing-card
+version: 1.0.0
+kind: component-recipe
+role: "comparison and conversion"
+summary: "Pricing cards help users choose with confidence."
+anatomy:
+  - "plan name"
+  - "audience label"
+  - "price or value"
+  - "billing scope"
+  - "feature list"
+  - "recommended marker"
+  - "primary action"
+  - "tradeoff note"
+variants:
+  - "tier"
+  - "usage-based"
+  - "enterprise"
+  - "comparison-row"
+tokens_consumed:
+  color:
+    - "surface"
+    - "accent"
+    - "border"
+    - "muted"
+  typography:
+    - "heading"
+    - "numeral"
+  radius:
+    - "panel"
+state_matrix:
+  default: "Plan differences are clear."
+  hover: "Clickable plan or CTA responds."
+  selected: "Billing interval or selected plan is persistent."
+  disabled: "Unavailable plan explains why."
+style_behavior:
+  quiet-saas:
+    comparison: "practical plan fit and clear feature limits"
+    highlight: "subtle recommended marker"
+    detail: "show team size, usage, or workflow threshold"
+  editorial-premium:
+    comparison: "fewer tiers, stronger narrative"
+    highlight: "recommended plan can be compositional centerpiece"
+    detail: "plans can feel like editions or memberships"
+  technical-product:
+    comparison: "usage, seats, runs, tokens, retention, environments"
+    highlight: "clear overage and scale signals"
+    detail: "include API limits, audit logs, eval runs, or deployment scopes"
+responsive_rules:
+  - "Stack plans on mobile with recommended option easy to compare."
+  - "Keep CTA visible after feature list."
+accessibility_rules:
+  - "Do not mark recommended by color alone."
+  - "Use clear billing text."
+anti_patterns:
+  - "Three identical cards with vague features."
+  - "Hiding tradeoffs."
+  - "Too many checkmarks without grouping."
+exceed_expectations:
+  - "Add a plan-fit cue: best for solo testing, production team, regulated org, high-volume workflow."
+

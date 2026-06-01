@@ -1,0 +1,10 @@
+templates:
+  - id: quiet-saas
+    file: aesthetic-directions/quiet-saas.yaml
+    summary: "Calm, precise SaaS website direction with restrained conversion and strong clarity."
+  - id: editorial-premium
+    file: aesthetic-directions/editorial-premium.yaml
+    summary: "Distinctive, composed, brand-forward UI with strong typography and memory."
+  - id: technical-product
+    file: aesthetic-directions/technical-product.yaml
+    summary: "Trustworthy technical product website direction for APIs, AI tools, infrastructure, and open-source projects."

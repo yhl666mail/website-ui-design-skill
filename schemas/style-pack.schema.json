@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/website-ui-design/style-pack.schema.json",
+  "title": "Website UI Design Style Pack",
+  "type": "object",
+  "required": ["meta", "tokens", "components"],
+  "additionalProperties": true,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["name", "version", "aesthetic_direction", "memory_point", "density"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "aesthetic_direction": { "type": "string" },
+        "audience": { "type": "string" },
+        "density": { "type": "string" },
+        "memory_point": { "type": "string" }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "required": ["color", "typography", "spacing", "radius", "shadow", "motion", "size"],
+      "properties": {
+        "color": { "type": "object" },
+        "typography": { "type": "object" },
+        "spacing": { "type": "object" },
+        "radius": { "type": "object" },
+        "shadow": { "type": "object" },
+        "motion": { "type": "object" },
+        "size": { "type": "object" }
+      }
+    },
+    "components": {
+      "type": "object",
+      "required": ["button", "card", "table", "form", "nav"],
+      "properties": {
+        "button": { "$ref": "#/$defs/componentDetail" },
+        "card": { "$ref": "#/$defs/componentDetail" },
+        "table": { "$ref": "#/$defs/componentDetail" },
+        "form": { "$ref": "#/$defs/componentDetail" },
+        "nav": { "$ref": "#/$defs/componentDetail" },
+        "metric": { "$ref": "#/$defs/componentDetail" },
+        "hero": { "$ref": "#/$defs/componentDetail" },
+        "pricing": { "$ref": "#/$defs/componentDetail" },
+        "chat": { "$ref": "#/$defs/componentDetail" },
+        "empty": { "$ref": "#/$defs/componentDetail" }
+      }
+    },
+    "quality_gates": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "componentDetail": {
+      "type": "object",
+      "required": [
+        "role",
+        "style_intent",
+        "anatomy_detail",
+        "states",
+        "responsive_behavior",
+        "accessibility_behavior",
+        "exceed_expectations"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "role": { "type": "string" },
+        "style_intent": { "type": "string" },
+        "anatomy_detail": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "states": {
+          "type": "object",
+          "minProperties": 3
+        },
+        "responsive_behavior": { "type": "string" },
+        "accessibility_behavior": { "type": "string" },
+        "exceed_expectations": { "type": "string" }
+      }
+    }
+  }
+}

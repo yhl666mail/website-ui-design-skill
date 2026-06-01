@@ -1,0 +1,18 @@
+﻿id: faq-section
+version: 1.0.0
+kind: website-section
+role: "objection handling"
+use_when:
+  - "The visitor may have buying, trust, implementation, pricing, or compatibility questions."
+required_elements:
+  - "specific questions"
+  - "short answers"
+  - "optional link or next step"
+style_behavior:
+  quiet-saas: "Practical answers about setup, security, billing, and support."
+  editorial-premium: "Concise editorial Q&A with calm rhythm."
+  technical-product: "Technical answers about APIs, data, hosting, models, or integrations."
+anti_patterns:
+  - "FAQ repeating marketing copy."
+  - "Answers too vague to reduce risk."
+

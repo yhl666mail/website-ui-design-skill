@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta.name}} Website</title>
+  <style>
+    {{generated.css_variables}}
+
+    * { box-sizing: border-box; }
+    html { color-scheme: {{generated.color_scheme}}; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--color-background);
+      color: var(--color-text);
+      font-family: var(--typography-font-body);
+      font-size: var(--typography-body-size);
+      line-height: 1.55;
+    }
+    button, input, textarea, select { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img, svg { max-width: 100%; display: block; }
+
+    {{generated.component_css}}
+
+    .site-shell {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 32rem),
+        linear-gradient(180deg, color-mix(in srgb, var(--color-surface-alt) 46%, transparent), transparent 34rem),
+        var(--color-background);
+    }
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .site-header {
+      min-height: var(--size-nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-control);
+      background: var(--color-accent);
+      color: var(--button-primary-fg, #fff);
+      box-shadow: var(--shadow-action);
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--color-muted);
+      font-size: 14px;
+    }
+    .site-nav a:hover { color: var(--color-text); }
+    .hero {
+      min-height: clamp(620px, 86vh, 780px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+      padding: 26px 0 54px;
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--color-muted);
+      font-size: var(--typography-label-size);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--typography-font-display);
+      font-size: clamp(46px, 8vw, 92px);
+      line-height: 0.94;
+      font-weight: var(--typography-heading-weight);
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      margin: 24px 0 0;
+      max-width: 620px;
+      color: var(--color-muted);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-control-gap);
+      margin-top: 28px;
+    }
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+      color: var(--color-muted);
+      font-size: 13px;
+    }
+    .hero-proof span {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      padding: 6px 10px;
+      background: color-mix(in srgb, var(--color-surface) 74%, transparent);
+    }
+    .product-frame {
+      position: relative;
+      min-height: 520px;
+      border: 1px solid var(--card-border, var(--color-border));
+      border-radius: var(--radius-panel);
+      background: var(--card-surface, var(--color-surface));
+      box-shadow: var(--shadow-panel);
+      padding: clamp(16px, 3vw, 26px);
+    }
+    .product-frame::before {
+      content: "{{components.hero.composition}}";
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      color: var(--color-muted);
+      font-size: var(--typography-label-size);
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .preview-panel {
+      min-height: 150px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-control);
+      background: var(--color-surface-alt);
+      padding: 16px;
+    }
+    .preview-panel.large { min-height: 318px; }
+    .preview-panel strong { display: block; margin-bottom: 10px; }
+    .preview-line {
+      height: 10px;
+      border-radius: var(--radius-pill);
+      background: color-mix(in srgb, var(--color-accent) 24%, var(--color-border));
+      margin: 10px 0;
+    }
+    .section {
+      padding: clamp(62px, 9vw, 112px) 0;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.55fr);
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .section h2 {
+      margin: 0;
+      font-family: var(--typography-font-display);
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--color-muted);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .feature-card {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .feature-index {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      color: var(--color-accent);
+      font-weight: 760;
+    }
+    .feature-card h3,
+    .pricing-card h3 {
+      margin: 18px 0 8px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+    .feature-card p,
+    .pricing-card p,
+    .faq-item p,
+    .testimonial p {
+      color: var(--color-muted);
+    }
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .proof-item {
+      border-top: 1px solid var(--color-border);
+      padding-top: 14px;
+    }
+    .proof-item strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      font-variant-numeric: var(--typography-numeral-style);
+    }
+    .testimonial {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.28fr);
+      gap: 28px;
+      align-items: end;
+    }
+    .quote {
+      margin: 0;
+      font-family: var(--typography-font-display);
+      font-size: clamp(30px, 5vw, 58px);
+      line-height: 1.04;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .price {
+      font-family: var(--typography-font-display);
+      font-size: 42px;
+      line-height: 1;
+      margin: 14px 0;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .faq-item {
+      border-top: 1px solid var(--color-border);
+      padding-top: 16px;
+    }
+    .cta-band {
+      border-radius: var(--radius-panel);
+      background: var(--color-text);
+      color: var(--color-background);
+      padding: clamp(28px, 6vw, 64px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+    .cta-band p { color: color-mix(in srgb, var(--color-background) 76%, transparent); }
+    .site-footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--color-border);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      color: var(--color-muted);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    @media (max-width: 860px) {
+      .site-nav { display: none; }
+      .hero,
+      .section-head,
+      .testimonial,
+      .cta-band,
+      .site-footer {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        min-height: auto;
+        padding-top: 34px;
+      }
+      .product-frame { min-height: 420px; }
+      .preview-grid,
+      .feature-grid,
+      .proof-strip,
+      .pricing-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions .ui-button,
+      .cta-band .ui-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="container site-header">
+      <a class="brand" href="#" aria-label="{{meta.name}} home">
+        <span class="brand-mark">S</span>
+        <span>{{meta.name}}</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#proof">Proof</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="ui-button ui-button-primary" href="#cta">{{components.cta.primary_action}}</a>
+    </header>
+
+    <main>
+      <section class="container hero">
+        <div>
+          <p class="eyebrow">{{meta.aesthetic_direction}}</p>
+          <h1>{{components.hero.headline}}</h1>
+          <p class="hero-copy">{{components.hero.subcopy}}</p>
+          <div class="hero-actions">
+            <a class="ui-button ui-button-primary" href="#cta">{{components.cta.primary_action}}</a>
+            <a class="ui-button ui-button-secondary" href="#proof">{{components.cta.secondary_action}}</a>
+          </div>
+          <div class="hero-proof" aria-label="Proof points">
+            <span>{{components.proof.proof_one}}</span>
+            <span>{{components.proof.proof_two}}</span>
+            <span>{{components.proof.proof_three}}</span>
+          </div>
+        </div>
+        <div class="product-frame" aria-label="{{components.hero.preview_label}}">
+          <div class="preview-grid">
+            <div class="preview-panel large">
+              <strong>{{components.hero.preview_title}}</strong>
+              <div class="preview-line" style="width: 86%"></div>
+              <div class="preview-line" style="width: 62%"></div>
+              <div class="preview-line" style="width: 74%"></div>
+            </div>
+            <div>
+              <div class="preview-panel">
+                <strong>{{components.feature.feature_one_title}}</strong>
+                <p class="ui-muted">{{components.feature.feature_one_detail}}</p>
+              </div>
+              <div class="preview-panel" style="margin-top: 14px;">
+                <strong>{{components.proof.metric_label}}</strong>
+                <div class="price">{{components.proof.metric_value}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="container section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">What visitors remember</p>
+            <h2>{{components.feature.section_headline}}</h2>
+          </div>
+          <p>{{components.feature.section_subcopy}}</p>
+        </div>
+        <div class="feature-grid">
+          <article class="ui-card feature-card">
+            <span class="feature-index">1</span>
+            <div>
+              <h3>{{components.feature.feature_one_title}}</h3>
+              <p>{{components.feature.feature_one_detail}}</p>
+            </div>
+          </article>
+          <article class="ui-card feature-card">
+            <span class="feature-index">2</span>
+            <div>
+              <h3>{{components.feature.feature_two_title}}</h3>
+              <p>{{components.feature.feature_two_detail}}</p>
+            </div>
+          </article>
+          <article class="ui-card feature-card">
+            <span class="feature-index">3</span>
+            <div>
+              <h3>{{components.feature.feature_three_title}}</h3>
+              <p>{{components.feature.feature_three_detail}}</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="proof" class="container section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Proof</p>
+            <h2>{{components.proof.section_headline}}</h2>
+          </div>
+          <p>{{components.proof.source_note}}</p>
+        </div>
+        <div class="proof-strip">
+          <div class="proof-item"><strong>{{components.proof.metric_value}}</strong><span>{{components.proof.metric_label}}</span></div>
+          <div class="proof-item"><strong>{{components.proof.proof_one}}</strong><span>{{components.proof.proof_one_context}}</span></div>
+          <div class="proof-item"><strong>{{components.proof.proof_two}}</strong><span>{{components.proof.proof_two_context}}</span></div>
+          <div class="proof-item"><strong>{{components.proof.proof_three}}</strong><span>{{components.proof.proof_three_context}}</span></div>
+        </div>
+      </section>
+
+      <section class="container section testimonial">
+        <blockquote class="quote">{{components.testimonial.quote}}</blockquote>
+        <div>
+          <p class="eyebrow">{{components.testimonial.result}}</p>
+          <p>{{components.testimonial.attribution}}</p>
+        </div>
+      </section>
+
+      <section id="pricing" class="container section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Pricing</p>
+            <h2>{{components.pricing.section_headline}}</h2>
+          </div>
+          <p>{{components.pricing.section_subcopy}}</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="ui-card pricing-card">
+            <p class="eyebrow">{{components.pricing.plan_one_fit}}</p>
+            <h3>{{components.pricing.plan_one_name}}</h3>
+            <div class="price">{{components.pricing.plan_one_price}}</div>
+            <p>{{components.pricing.plan_one_detail}}</p>
+            <a class="ui-button ui-button-secondary" href="#cta">{{components.pricing.plan_one_action}}</a>
+          </article>
+          <article class="ui-card pricing-card">
+            <p class="eyebrow">{{components.pricing.plan_two_fit}}</p>
+            <h3>{{components.pricing.plan_two_name}}</h3>
+            <div class="price">{{components.pricing.plan_two_price}}</div>
+            <p>{{components.pricing.plan_two_detail}}</p>
+            <a class="ui-button ui-button-primary" href="#cta">{{components.pricing.plan_two_action}}</a>
+          </article>
+          <article class="ui-card pricing-card">
+            <p class="eyebrow">{{components.pricing.plan_three_fit}}</p>
+            <h3>{{components.pricing.plan_three_name}}</h3>
+            <div class="price">{{components.pricing.plan_three_price}}</div>
+            <p>{{components.pricing.plan_three_detail}}</p>
+            <a class="ui-button ui-button-secondary" href="#cta">{{components.pricing.plan_three_action}}</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" class="container section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">FAQ</p>
+            <h2>{{components.faq.section_headline}}</h2>
+          </div>
+          <p>{{components.faq.section_subcopy}}</p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item"><strong>{{components.faq.q1}}</strong><p>{{components.faq.a1}}</p></div>
+          <div class="faq-item"><strong>{{components.faq.q2}}</strong><p>{{components.faq.a2}}</p></div>
+          <div class="faq-item"><strong>{{components.faq.q3}}</strong><p>{{components.faq.a3}}</p></div>
+          <div class="faq-item"><strong>{{components.faq.q4}}</strong><p>{{components.faq.a4}}</p></div>
+        </div>
+      </section>
+
+      <section id="cta" class="container section">
+        <div class="cta-band">
+          <div>
+            <p class="eyebrow">{{components.cta.risk_reducer}}</p>
+            <h2>{{components.cta.headline}}</h2>
+            <p>{{components.cta.subcopy}}</p>
+          </div>
+          <a class="ui-button ui-button-primary" href="#">{{components.cta.primary_action}}</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <div>
+        <strong>{{meta.name}}</strong>
+        <p>{{components.footer.brand_statement}}</p>
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#proof">Proof</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#cta">{{components.footer.contact_label}}</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

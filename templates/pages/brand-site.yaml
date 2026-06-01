@@ -1,0 +1,32 @@
+id: brand-site
+version: 1.0.0
+kind: page
+summary: "A public brand website focused on identity, story, proof, and conversion."
+use_when:
+  - "The user asks for a company site, brand site, agency site, venue site, or public identity page."
+avoid_when:
+  - "The user primarily needs app operations, records, or internal workflows."
+audience:
+  - "prospects"
+  - "partners"
+  - "press"
+  - "recruiting candidates"
+density: medium
+goals:
+  - "Make the brand memorable in the first viewport."
+  - "Explain what the organization does and why it matters."
+  - "Provide credible proof and contact path."
+required_sections:
+  - "site-header"
+  - "website-hero"
+  - "feature-section"
+  - "proof-section"
+  - "testimonial-section"
+  - "cta-section"
+  - "site-footer"
+compatible_aesthetic_directions:
+  - "editorial-premium"
+  - "quiet-saas"
+anti_patterns:
+  - "Anonymous corporate template with no brand memory point."
+  - "Abstract visuals that reveal nothing about the organization."

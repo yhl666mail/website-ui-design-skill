@@ -1,0 +1,60 @@
+﻿id: landing-page
+version: 1.0.0
+kind: page
+summary: "A conversion-oriented page that introduces a product, offer, person, or campaign."
+use_when:
+  - "The user needs a website, product launch page, waitlist page, portfolio, or campaign."
+  - "The primary goal is explanation, credibility, conversion, or brand positioning."
+  - "The content is mostly narrative, proof, features, pricing, or calls to action."
+avoid_when:
+  - "The user needs to operate records, monitor metrics, or complete repeated workflows."
+  - "The page is an internal tool where information density matters more than persuasion."
+audience:
+  - "buyers"
+  - "founders"
+  - "creators"
+  - "recruiters"
+  - "general consumers"
+density: medium
+goals:
+  - "Orient the visitor in the first viewport."
+  - "Make the offer concrete."
+  - "Provide proof before asking for commitment."
+  - "Keep the primary CTA visible and specific."
+required_sections:
+  - "header_nav"
+  - "hero"
+  - "proof_or_trust"
+  - "feature_explanation"
+  - "primary_cta"
+optional_sections:
+  - "pricing"
+  - "testimonials"
+  - "demo_preview"
+  - "faq"
+  - "footer"
+required_states:
+  - "hover"
+  - "focus"
+layout_rules:
+  - "The first viewport must identify the product or offer clearly."
+  - "Hero content should reveal a hint of the next section on common desktop and mobile heights."
+  - "Use section contrast through layout, media, or rhythm, not repeated card wrappers."
+  - "CTA labels must describe the next action."
+common_blocks:
+  - "hero"
+  - "pricing"
+  - "empty-state"
+compatible_aesthetic_directions:
+  - "quiet-saas"
+  - "editorial-premium"
+  - "technical-product"
+anti_patterns:
+  - "Generic value proposition without product specifics."
+  - "Oversized hero that hides all supporting proof."
+  - "Decorative screenshots that do not show the product or workflow."
+  - "Too many CTAs with equal weight."
+output_notes:
+  - "Use real feature names and plausible customer proof when domain context exists."
+  - "If no visual assets are available, build a product-revealing interface mock instead of abstract decoration."
+

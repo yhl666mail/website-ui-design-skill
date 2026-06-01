@@ -1,0 +1,7 @@
+interface:
+  display_name: "Website UI Design"
+  short_description: "Create style packs and polished website UI artifacts."
+  default_prompt: "Use $website-ui-design to create a detailed style pack and polished single-file website from my product idea."
+
+policy:
+  allow_implicit_invocation: true

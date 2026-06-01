@@ -1,0 +1,33 @@
+﻿id: feature-section
+version: 1.0.0
+kind: component-recipe
+role: "website explanation"
+summary: "Feature sections explain outcomes with proof, not generic capabilities."
+anatomy:
+  - "section label"
+  - "headline"
+  - "2-4 feature outcomes"
+  - "supporting proof or example"
+  - "visual or product signal"
+state_matrix:
+  default: "Features are scannable and ordered by visitor importance."
+  hover: "Interactive feature cards reveal supporting detail only if useful."
+  focus: "Any linked feature has a clear focus state."
+  loading: "Product preview areas preserve layout while media loads."
+style_behavior:
+  quiet-saas:
+    detail: "Use restrained cards with outcome labels and customer-like examples."
+  editorial-premium:
+    detail: "Use chapter-like sections, asymmetry, and strong typographic hierarchy."
+  technical-product:
+    detail: "Use technical proof such as snippets, traces, or integration detail only when relevant."
+responsive_rules:
+  - "Avoid shrinking copy into unreadable columns."
+  - "Stack features into a deliberate story order on mobile."
+accessibility_rules:
+  - "Do not make icons the only explanation."
+anti_patterns:
+  - "Interchangeable feature cards with generic verbs."
+exceed_expectations:
+  - "Each feature includes a concrete before/after, result, or product detail."
+

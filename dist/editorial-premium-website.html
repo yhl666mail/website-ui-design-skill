@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signal Edition Website</title>
+  <style>
+    :root {
+  --color-background: #FBF7F0;
+  --color-surface: #FFFDF8;
+  --color-surface-alt: #F1E8DB;
+  --color-elevated: #FFFFFF;
+  --color-text: #181512;
+  --color-muted: #746B60;
+  --color-border: #D8CDBD;
+  --color-accent: #A63D2B;
+  --color-accent-soft: #F7E5DF;
+  --color-focus: #D86B56;
+  --color-success: #2F7A55;
+  --color-warning: #9B6116;
+  --color-danger: #B9352A;
+  --color-row-hover: #F7EFE4;
+  --color-selected: #F7E5DF;
+  --color-field: #FFFDF8;
+  --typography-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --typography-font-display: Georgia, "Times New Roman", serif;
+  --typography-font-mono: "SFMono-Regular", Consolas, monospace;
+  --typography-body-size: 15px;
+  --typography-label-size: 12px;
+  --typography-heading-weight: 680;
+  --typography-numeral-style: tabular-nums;
+  --spacing-page: 30px;
+  --spacing-section: 36px;
+  --spacing-panel: 20px;
+  --spacing-card-padding: 22px;
+  --spacing-field-gap: 9px;
+  --spacing-control-gap: 12px;
+  --spacing-table-cell-x: 14px;
+  --radius-control: 3px;
+  --radius-panel: 4px;
+  --radius-pill: 999px;
+  --shadow-panel: 0 22px 60px rgba(89, 69, 43, 0.10);
+  --shadow-overlay: 0 28px 90px rgba(89, 69, 43, 0.22);
+  --shadow-action: inset 0 -2px 0 rgba(24, 21, 18, 0.16);
+  --motion-duration-fast: 160ms;
+  --motion-duration-base: 240ms;
+  --motion-ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --size-control-sm: 32px;
+  --size-control-md: 42px;
+  --size-control-lg: 50px;
+  --size-table-row: 50px;
+  --size-nav-height: 56px;
+  --button-primary-bg: #A63D2B;
+  --button-primary-fg: #FFFDF8;
+  --button-secondary-bg: #FFFDF8;
+  --button-secondary-fg: #181512;
+  --button-border: #D8CDBD;
+  --button-hover-transform: translateY(-1px);
+  --button-loading-label: Preparing;
+  --button-role: Website conversion and exploration actions.;
+  --button-style-intent: Buttons feel deliberate and editorial, with strong contrast and restrained motion.;
+  --button-states-default: Primary CTA uses the warm accent as a strong editorial mark.;
+  --button-states-hover: Hover lifts slightly and deepens the action surface.;
+  --button-states-focus: Focus ring stays visible outside the button edge.;
+  --button-states-loading: Loading keeps width stable and reads Preparing preview.;
+  --button-states-disabled: Disabled action keeps readable copy and reason nearby.;
+  --button-responsive-behavior: Primary website CTAs become full-width on mobile while secondary actions sit below.;
+  --button-accessibility-behavior: CTA labels describe the actual next step and never rely on icon-only affordances.;
+  --button-exceed-expectations: Primary CTAs can use launch-specific states like Previewing, Reserved, Published, or Request received.;
+  --card-surface: #FFFDF8;
+  --card-header-bg: #FBF7F0;
+  --card-border: #D8CDBD;
+  --card-metadata-color: #746B60;
+  --card-status-detail: Each card carries a visitor takeaway or proof caption.;
+  --card-role: Website content grouping and visual rhythm.;
+  --card-style-intent: Cards act as editorial plates for proof and outcomes, not interchangeable content boxes.;
+  --card-states-default: Cards use warm surface, fine border, and generous rhythm.;
+  --card-states-hover: Linked cards gain subtle border warmth.;
+  --card-states-focus: Linked cards show visible focus treatment.;
+  --card-states-loading: Card skeleton preserves headline and caption rhythm.;
+  --card-responsive-behavior: Cards stack in story order and keep headings readable.;
+  --card-accessibility-behavior: Card titles use headings and linked cards expose real links.;
+  --card-exceed-expectations: Cards include source, result, or visitor takeaway instead of filler copy.;
+  --table-row-height: 44px;
+  --table-header-bg: #F7F8FA;
+  --table-row-hover: #F3F6FA;
+  --table-status-style: text labels plus color;
+  --table-decision-column: Status;
+  --form-field-bg: #FFFDF8;
+  --form-field-border: #D8CDBD;
+  --form-focus-border: #A63D2B;
+  --form-helper-tone: brief, editorial, and specific;
+  --form-safety-detail: Replies are reviewed within one business day.;
+  --form-role: Website lead capture or contact input.;
+  --form-style-intent: Forms are short, refined, and confidence-building for public visitors.;
+  --form-states-default: Fields use warm paper surfaces and clear labels.;
+  --form-states-focus: Focused fields use accent border and visible ring.;
+  --form-states-invalid: Validation states expected format in plain language.;
+  --form-states-success: Success confirms when visitors will hear back.;
+  --form-responsive-behavior: Forms stack on mobile and keep submit action near fields.;
+  --form-accessibility-behavior: Labels are visible and errors are text, not color only.;
+  --form-exceed-expectations: Lead forms include response time or next-step expectation.;
+  --nav-background: #FFFFFF;
+  --nav-active-bg: #EAF1FF;
+  --nav-active-fg: #1F2328;
+  --nav-scope-detail: Current workspace is visible.;
+  --metric-value-weight: 760;
+  --metric-trend-bg: #EAF1FF;
+  --metric-trend-fg: #2563EB;
+  --metric-decision-cue: Review values outside threshold.;
+  --hero-composition: Annotated launch-room preview with proof captions;
+  --hero-proof-detail: Shows realistic product state.;
+  --hero-role: First-viewport website story and conversion.;
+  --hero-style-intent: Hero feels like an editorial cover but still shows the actual product promise and proof in the first viewport.;
+  --hero-states-default: Cover-like typography and annotated preview make the product memorable.;
+  --hero-states-hover: Preview areas reveal annotation affordance without decorative movement.;
+  --hero-states-focus: CTA focus remains visible against the warm editorial background.;
+  --hero-states-loading: Preview skeleton preserves composition while product media loads.;
+  --hero-states-error: Preview can show a correction note instead of going blank.;
+  --hero-responsive-behavior: Hero stacks into headline, CTA, proof chips, then preview on mobile.;
+  --hero-accessibility-behavior: Hero uses one h1 and keeps proof text outside inaccessible imagery.;
+  --hero-exceed-expectations: The hero includes source-backed proof chips and an annotated product preview instead of abstract decoration.;
+  --hero-headline: Launch a website visitors remember after the first scroll.;
+  --hero-subcopy: Signal Edition turns a product idea into a composed public website with a clear story, credible proof, and sections that feel intentionally designed.;
+  --hero-preview-label: Annotated product website preview;
+  --hero-preview-title: Briefing-style homepage system;
+  --pricing-highlight-rule: Highlight one recommended option.;
+  --pricing-fit-cue: Best fit is explained with concrete criteria.;
+  --pricing-role: Website package comparison and buying confidence.;
+  --pricing-style-intent: Pricing feels like choosing an edition, with fit cues and tradeoffs visible before the visitor clicks.;
+  --pricing-states-default: Plans use edition language and clear fit cues.;
+  --pricing-states-hover: Plan CTAs emphasize action without turning cards into ads.;
+  --pricing-states-focus: Plan links and buttons have visible focus.;
+  --pricing-states-selected: Recommended plan uses label and structure, not color alone.;
+  --pricing-states-disabled: Unavailable plan explains contact or approval path.;
+  --pricing-responsive-behavior: Plans stack on mobile with fit cues before feature detail.;
+  --pricing-accessibility-behavior: Recommended labels and price scopes are visible text.;
+  --pricing-exceed-expectations: Each plan names the visitor type and tradeoff instead of listing generic features.;
+  --pricing-section-headline: Pick the depth of website direction.;
+  --pricing-section-subcopy: Use the same style pack system for a quick launch page or a full brand site.;
+  --pricing-plan-one-name: Sketch;
+  --pricing-plan-one-fit: For quick concept validation;
+  --pricing-plan-one-price: $0;
+  --pricing-plan-one-detail: One-page structure, core style pack, and hero proof direction.;
+  --pricing-plan-one-action: Start sketch;
+  --pricing-plan-two-name: Launch Room;
+  --pricing-plan-two-fit: Best for public launches;
+  --pricing-plan-two-price: $49;
+  --pricing-plan-two-detail: Full website sections, proof strategy, pricing, FAQ, and CTA behavior.;
+  --pricing-plan-two-action: Build launch page;
+  --pricing-plan-three-name: Brand System;
+  --pricing-plan-three-fit: For repeatable site families;
+  --pricing-plan-three-price: Custom;
+  --pricing-plan-three-detail: Reusable section library, visual directions, and quality gates.;
+  --pricing-plan-three-action: Plan system;
+  --chat-tool-call-surface: #F7F8FA;
+  --chat-metadata: tool status and changed artifact count;
+  --empty-next-action: Create the first item.;
+  --empty-diagnostic-detail: Explain what is missing.;
+  --site-header-role: Public website orientation and brand masthead.;
+  --site-header-style-intent: Header behaves like a refined launch masthead with few links, strong brand identity, and one clear visitor action.;
+  --site-header-states-default: Masthead sits quietly above the hero while keeping brand and CTA visible.;
+  --site-header-states-hover: Links use a warm underline or text shift without moving layout.;
+  --site-header-states-focus: Keyboard focus is visible around both links and CTA.;
+  --site-header-states-sticky: Sticky behavior stays compact and never covers hero copy.;
+  --site-header-states-mobile: Mobile keeps brand and primary action visible before opening navigation.;
+  --site-header-responsive-behavior: Navigation collapses to a concise menu while brand and CTA remain reachable.;
+  --site-header-accessibility-behavior: Header uses a nav landmark, text labels, and a specific CTA label.;
+  --site-header-exceed-expectations: The header exposes launch phase and proof link, making the site feel like a real product launch.;
+  --feature-role: Outcome-focused product explanation.;
+  --feature-style-intent: Feature sections read like a sequence of editorial chapters, each with proof and a clear visitor takeaway.;
+  --feature-states-default: Feature cards use warm surfaces, chapter numbering, and concise outcome copy.;
+  --feature-states-hover: Hover reveals a proof caption or subtle border warmth.;
+  --feature-states-focus: Linked features have visible focus without changing layout.;
+  --feature-states-loading: Preview media keeps section rhythm while assets load.;
+  --feature-responsive-behavior: Feature cards stack into a deliberate story order on mobile.;
+  --feature-accessibility-behavior: Feature cards use headings and text proof; icons are decorative only.;
+  --feature-exceed-expectations: Each feature has a visitor outcome plus a proof detail, not just a capability label.;
+  --feature-section-headline: A website system with a point of view.;
+  --feature-section-subcopy: The style pack does more than swap colors. It turns the chosen aesthetic into section-specific behavior, proof, and responsive decisions.;
+  --feature-feature-one-title: Hero as a product briefing;
+  --feature-feature-one-detail: The first viewport names the offer, shows proof chips, and previews the actual website structure.;
+  --feature-feature-two-title: Sections with a job;
+  --feature-feature-two-detail: Every feature, proof, testimonial, and CTA section answers a specific visitor question.;
+  --feature-feature-three-title: Components inherit the style;
+  --feature-feature-three-detail: Buttons, cards, pricing, FAQ, and footer adapt to the same editorial direction without becoming identical.;
+  --proof-role: Website credibility and decision confidence.;
+  --proof-style-intent: Proof appears as cited evidence, not a loose logo wall or fake KPI band.;
+  --proof-states-default: Proof points include source or context so they feel credible.;
+  --proof-states-hover: Linked proof points reveal case-study or source direction.;
+  --proof-states-focus: Linked proof has visible focus treatment.;
+  --proof-states-loading: Proof strip preserves spacing while logos or metrics load.;
+  --proof-states-empty: Missing proof invites adding a source instead of showing fake numbers.;
+  --proof-responsive-behavior: Proof items stack into readable source-backed evidence on narrow screens.;
+  --proof-accessibility-behavior: Logo and metric proof always includes text context.;
+  --proof-exceed-expectations: Each proof point has a context caption, making it usable in a real launch page.;
+  --proof-section-headline: Proof that reads like evidence.;
+  --proof-source-note: Use source, segment, and timeframe so visitors know why each claim matters.;
+  --proof-metric-label: sections covered;
+  --proof-metric-value: 9;
+  --proof-proof-one: Hero;
+  --proof-proof-one-context: first-viewport product signal;
+  --proof-proof-two: Pricing;
+  --proof-proof-two-context: fit cues and tradeoffs;
+  --proof-proof-three: FAQ;
+  --proof-proof-three-context: objection handling;
+  --testimonial-role: Human credibility for the website offer.;
+  --testimonial-style-intent: Testimonials feel like sourced editorial pull quotes with context and result.;
+  --testimonial-states-default: Quote is large enough to be memorable but short enough to scan.;
+  --testimonial-states-hover: Case-study link can reveal a subtle source affordance.;
+  --testimonial-states-focus: Linked testimonial has visible focus treatment.;
+  --testimonial-states-loading: Attribution and quote skeleton preserve line length.;
+  --testimonial-responsive-behavior: Quote stacks above attribution on mobile with readable line length.;
+  --testimonial-accessibility-behavior: Quote text is real text and attribution is explicit.;
+  --testimonial-exceed-expectations: The quote includes a before/after result instead of generic praise.;
+  --testimonial-quote: The first version finally felt like a real launch page with a story visitors could repeat.;
+  --testimonial-attribution: Mira Chen, product lead for a seed-stage AI tool;
+  --testimonial-result: From generic SaaS to launch-ready narrative in one pass;
+  --faq-role: Website objection handling.;
+  --faq-style-intent: FAQ answers should reduce real visitor uncertainty instead of repeating marketing claims.;
+  --faq-states-default: Questions are specific and answers stay concise.;
+  --faq-states-hover: Interactive rows reveal affordance without noisy decoration.;
+  --faq-states-focus: Accordion-style controls have visible focus.;
+  --faq-states-expanded: Expanded answers preserve comfortable reading rhythm.;
+  --faq-responsive-behavior: FAQ collapses to one column on mobile with clear spacing.;
+  --faq-accessibility-behavior: FAQ controls expose expanded state in real implementations.;
+  --faq-exceed-expectations: Each answer removes one real buying or implementation objection.;
+  --faq-section-headline: Questions that stop generic websites.;
+  --faq-section-subcopy: The system forces specificity before visual polish.;
+  --faq-q1: Does this replace a designer?;
+  --faq-a1: No. It gives an AI agent a stronger design process so the first artifact is more useful.;
+  --faq-q2: Can the same template create different sites?;
+  --faq-a2: Yes. Structure is stable, but style pack decisions change typography, sections, proof, and component behavior.;
+  --faq-q3: What makes it website-specific?;
+  --faq-a3: It prioritizes visitor story, proof, conversion, and brand memory before visual decoration.;
+  --faq-q4: How do I extend it?;
+  --faq-a4: Add new website sections, aesthetic directions, or style packs without rewriting the core skill.;
+  --cta-role: Website conversion and next step.;
+  --cta-style-intent: CTA section should close the story with a concrete action and a risk reducer.;
+  --cta-states-default: CTA uses strong contrast and a single dominant action.;
+  --cta-states-hover: CTA button hover strengthens confidence without extra visual noise.;
+  --cta-states-focus: Primary action focus remains visible on dark inverse band.;
+  --cta-states-loading: Lead action preserves width and confirms progress.;
+  --cta-responsive-behavior: CTA text and action stack on mobile with the action full width.;
+  --cta-accessibility-behavior: CTA label names the next step and risk reducer is readable text.;
+  --cta-exceed-expectations: CTA includes a risk reducer so conversion feels safe, not pushy.;
+  --cta-headline: Design the website before you decorate it.;
+  --cta-subcopy: Generate a style pack, section strategy, and HTML page that all point at the same visitor story.;
+  --cta-primary-action: Preview website system;
+  --cta-secondary-action: See proof sections;
+  --cta-risk-reducer: No fixed theme lock-in;
+  --footer-role: Website closure, trust, and navigation.;
+  --footer-style-intent: Footer should close the page like an editorial note while preserving useful links.;
+  --footer-states-default: Footer groups links calmly and reinforces brand memory.;
+  --footer-states-hover: Links show clear hover without heavy decoration.;
+  --footer-states-focus: Footer links have visible focus state.;
+  --footer-states-submitted: Newsletter or contact action confirms the next step.;
+  --footer-responsive-behavior: Footer stacks brand statement above grouped links on mobile.;
+  --footer-accessibility-behavior: Footer links are real text links with clear labels.;
+  --footer-exceed-expectations: Footer includes a confidence detail such as response time, open-source path, or support promise.;
+  --footer-brand-statement: A website-first HTML design skill for section-level style systems.;
+  --footer-contact-label: Request a site review;
+}
+
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--color-background);
+      color: var(--color-text);
+      font-family: var(--typography-font-body);
+      font-size: var(--typography-body-size);
+      line-height: 1.55;
+    }
+    button, input, textarea, select { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img, svg { max-width: 100%; display: block; }
+
+    .ui-card {
+  background: var(--card-surface, var(--color-surface));
+  border: 1px solid var(--card-border, var(--color-border));
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+  padding: var(--spacing-card-padding);
+}
+
+.ui-card-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.ui-card h2,
+.ui-empty h2 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.ui-muted {
+  color: var(--color-muted);
+}
+
+.ui-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-control-gap);
+  margin-top: 20px;
+}
+
+.ui-button {
+  min-height: var(--size-control-md);
+  border: 1px solid var(--button-border, var(--color-border));
+  border-radius: var(--radius-control);
+  padding: 0 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 680;
+  transition:
+    transform var(--motion-duration-fast) var(--motion-ease-standard),
+    border-color var(--motion-duration-fast) var(--motion-ease-standard),
+    background var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.ui-button:hover {
+  transform: var(--button-hover-transform, translateY(-1px));
+}
+
+.ui-button:focus-visible,
+.ui-form :is(input, select, textarea):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-focus) 36%, transparent);
+  outline-offset: 2px;
+}
+
+.ui-button-primary {
+  background: var(--button-primary-bg, var(--color-accent));
+  color: var(--button-primary-fg, #fff);
+  box-shadow: var(--shadow-action);
+}
+
+.ui-button-secondary {
+  background: var(--button-secondary-bg, var(--color-surface-alt));
+  color: var(--button-secondary-fg, var(--color-text));
+}
+
+.ui-facts {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.ui-facts div {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ui-facts dt {
+  color: var(--color-muted);
+  font-size: var(--typography-label-size);
+}
+
+.ui-facts dd {
+  margin: 3px 0 0;
+}
+
+.ui-metric-value {
+  font-variant-numeric: var(--typography-numeral-style);
+  font-size: 38px;
+  line-height: 1;
+  font-weight: var(--metric-value-weight, 760);
+  margin: 6px 0 8px;
+}
+
+.ui-chip,
+.ui-status {
+  width: fit-content;
+  border-radius: var(--radius-pill);
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--metric-trend-bg, var(--color-accent-soft));
+  color: var(--metric-trend-fg, var(--color-accent));
+  font-size: var(--typography-label-size);
+  font-weight: 680;
+}
+
+.ui-chip-warning {
+  background: color-mix(in srgb, var(--color-warning) 16%, transparent);
+  color: var(--color-warning);
+}
+
+.ui-status.success {
+  background: color-mix(in srgb, var(--color-success) 16%, transparent);
+  color: var(--color-success);
+}
+
+.ui-status.warning {
+  background: color-mix(in srgb, var(--color-warning) 16%, transparent);
+  color: var(--color-warning);
+}
+
+.ui-status.danger {
+  background: color-mix(in srgb, var(--color-danger) 16%, transparent);
+  color: var(--color-danger);
+}
+
+.ui-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+}
+
+.ui-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-variant-numeric: var(--typography-numeral-style);
+}
+
+.ui-table th,
+.ui-table td {
+  height: var(--table-row-height, var(--size-table-row));
+  padding: 0 var(--spacing-table-cell-x);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ui-table th {
+  background: var(--table-header-bg, var(--color-surface-alt));
+  color: var(--color-muted);
+  font-size: var(--typography-label-size);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ui-table tbody tr:hover {
+  background: var(--table-row-hover, var(--color-row-hover));
+}
+
+.ui-table code,
+.ui-tool-call {
+  font-family: var(--typography-font-mono);
+}
+
+.ui-form {
+  display: grid;
+  gap: 14px;
+}
+
+.ui-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--color-muted);
+  font-size: var(--typography-label-size);
+}
+
+.ui-form input,
+.ui-form select {
+  width: 100%;
+  min-height: var(--size-control-md);
+  border: 1px solid var(--form-field-border, var(--color-border));
+  border-radius: var(--radius-control);
+  background: var(--form-field-bg, var(--color-field));
+  color: var(--color-text);
+  padding: 0 11px;
+}
+
+.ui-chat {
+  display: grid;
+  gap: 12px;
+}
+
+.ui-message {
+  max-width: 760px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  padding: 12px 14px;
+  background: var(--color-surface-alt);
+}
+
+.ui-message.user {
+  margin-left: auto;
+  background: var(--color-selected);
+}
+
+.ui-tool-call {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-control);
+  padding: 10px 12px;
+  background: var(--chat-tool-call-surface, var(--color-surface-alt));
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.ui-empty {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+    .site-shell {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 32rem),
+        linear-gradient(180deg, color-mix(in srgb, var(--color-surface-alt) 46%, transparent), transparent 34rem),
+        var(--color-background);
+    }
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .site-header {
+      min-height: var(--size-nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-control);
+      background: var(--color-accent);
+      color: var(--button-primary-fg, #fff);
+      box-shadow: var(--shadow-action);
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--color-muted);
+      font-size: 14px;
+    }
+    .site-nav a:hover { color: var(--color-text); }
+    .hero {
+      min-height: clamp(620px, 86vh, 780px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+      padding: 26px 0 54px;
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--color-muted);
+      font-size: var(--typography-label-size);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--typography-font-display);
+      font-size: clamp(46px, 8vw, 92px);
+      line-height: 0.94;
+      font-weight: var(--typography-heading-weight);
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      margin: 24px 0 0;
+      max-width: 620px;
+      color: var(--color-muted);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-control-gap);
+      margin-top: 28px;
+    }
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+      color: var(--color-muted);
+      font-size: 13px;
+    }
+    .hero-proof span {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      padding: 6px 10px;
+      background: color-mix(in srgb, var(--color-surface) 74%, transparent);
+    }
+    .product-frame {
+      position: relative;
+      min-height: 520px;
+      border: 1px solid var(--card-border, var(--color-border));
+      border-radius: var(--radius-panel);
+      background: var(--card-surface, var(--color-surface));
+      box-shadow: var(--shadow-panel);
+      padding: clamp(16px, 3vw, 26px);
+    }
+    .product-frame::before {
+      content: "Annotated launch-room preview with proof captions";
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      color: var(--color-muted);
+      font-size: var(--typography-label-size);
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .preview-panel {
+      min-height: 150px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-control);
+      background: var(--color-surface-alt);
+      padding: 16px;
+    }
+    .preview-panel.large { min-height: 318px; }
+    .preview-panel strong { display: block; margin-bottom: 10px; }
+    .preview-line {
+      height: 10px;
+      border-radius: var(--radius-pill);
+      background: color-mix(in srgb, var(--color-accent) 24%, var(--color-border));
+      margin: 10px 0;
+    }
+    .section {
+      padding: clamp(62px, 9vw, 112px) 0;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.55fr);
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .section h2 {
+      margin: 0;
+      font-family: var(--typography-font-display);
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--color-muted);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .feature-card {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .feature-index {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      color: var(--color-accent);
+      font-weight: 760;
+    }
+    .feature-card h3,
+    .pricing-card h3 {
+      margin: 18px 0 8px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+    .feature-card p,
+    .pricing-card p,
+    .faq-item p,
+    .testimonial p {
+      color: var(--color-muted);
+    }
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .proof-item {
+      border-top: 1px solid var(--color-border);
+      padding-top: 14px;
+    }
+    .proof-item strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      font-variant-numeric: var(--typography-numeral-style);
+    }
+    .testimonial {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.28fr);
+      gap: 28px;
+      align-items: end;
+    }
+    .quote {
+      margin: 0;
+      font-family: var(--typography-font-display);
+      font-size: clamp(30px, 5vw, 58px);
+      line-height: 1.04;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .price {
+      font-family: var(--typography-font-display);
+      font-size: 42px;
+      line-height: 1;
+      margin: 14px 0;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .faq-item {
+      border-top: 1px solid var(--color-border);
+      padding-top: 16px;
+    }
+    .cta-band {
+      border-radius: var(--radius-panel);
+      background: var(--color-text);
+      color: var(--color-background);
+      padding: clamp(28px, 6vw, 64px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+    .cta-band p { color: color-mix(in srgb, var(--color-background) 76%, transparent); }
+    .site-footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--color-border);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      color: var(--color-muted);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    @media (max-width: 860px) {
+      .site-nav { display: none; }
+      .hero,
+      .section-head,
+      .testimonial,
+      .cta-band,
+      .site-footer {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        min-height: auto;
+        padding-top: 34px;
+      }
+      .product-frame { min-height: 420px; }
+      .preview-grid,
+      .feature-grid,
+      .proof-strip,
+      .pricing-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions .ui-button,
+      .cta-band .ui-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="container site-header">
+      <a class="brand" href="#" aria-label="Signal Edition home">
+        <span class="brand-mark">S</span>
+        <span>Signal Edition</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#proof">Proof</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="ui-button ui-button-primary" href="#cta">Preview website system</a>
+    </header>
+
+    <main>
+      <section class="container hero">
+        <div>
+          <p class="eyebrow">editorial-premium</p>
+          <h1>Launch a website visitors remember after the first scroll.</h1>
+          <p class="hero-copy">Signal Edition turns a product idea into a composed public website with a clear story, credible proof, and sections that feel intentionally designed.</p>
+          <div class="hero-actions">
+            <a class="ui-button ui-button-primary" href="#cta">Preview website system</a>
+            <a class="ui-button ui-button-secondary" href="#proof">See proof sections</a>
+          </div>
+          <div class="hero-proof" aria-label="Proof points">
+            <span>Hero</span>
+            <span>Pricing</span>
+            <span>FAQ</span>
+          </div>
+        </div>
+        <div class="product-frame" aria-label="Annotated product website preview">
+          <div class="preview-grid">
+            <div class="preview-panel large">
+              <strong>Briefing-style homepage system</strong>
+              <div class="preview-line" style="width: 86%"></div>
+              <div class="preview-line" style="width: 62%"></div>
+              <div class="preview-line" style="width: 74%"></div>
+            </div>
+            <div>
+              <div class="preview-panel">
+                <strong>Hero as a product briefing</strong>
+                <p class="ui-muted">The first viewport names the offer, shows proof chips, and previews the actual website structure.</p>
+              </div>
+              <div class="preview-panel" style="margin-top: 14px;">
+                <strong>sections covered</strong>
+                <div class="price">9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="container section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">What visitors remember</p>
+            <h2>A website system with a point of view.</h2>
+          </div>
+          <p>The style pack does more than swap colors. It turns the chosen aesthetic into section-specific behavior, proof, and responsive decisions.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="ui-card feature-card">
+            <span class="feature-index">1</span>
+            <div>
+              <h3>Hero as a product briefing</h3>
+              <p>The first viewport names the offer, shows proof chips, and previews the actual website structure.</p>
+            </div>
+          </article>
+          <article class="ui-card feature-card">
+            <span class="feature-index">2</span>
+            <div>
+              <h3>Sections with a job</h3>
+              <p>Every feature, proof, testimonial, and CTA section answers a specific visitor question.</p>
+            </div>
+          </article>
+          <article class="ui-card feature-card">
+            <span class="feature-index">3</span>
+            <div>
+              <h3>Components inherit the style</h3>
+              <p>Buttons, cards, pricing, FAQ, and footer adapt to the same editorial direction without becoming identical.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="proof" class="container section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Proof</p>
+            <h2>Proof that reads like evidence.</h2>
+          </div>
+          <p>Use source, segment, and timeframe so visitors know why each claim matters.</p>
+        </div>
+        <div class="proof-strip">
+          <div class="proof-item"><strong>9</strong><span>sections covered</span></div>
+          <div class="proof-item"><strong>Hero</strong><span>first-viewport product signal</span></div>
+          <div class="proof-item"><strong>Pricing</strong><span>fit cues and tradeoffs</span></div>
+          <div class="proof-item"><strong>FAQ</strong><span>objection handling</span></div>
+        </div>
+      </section>
+
+      <section class="container section testimonial">
+        <blockquote class="quote">The first version finally felt like a real launch page with a story visitors could repeat.</blockquote>
+        <div>
+          <p class="eyebrow">From generic SaaS to launch-ready narrative in one pass</p>
+          <p>Mira Chen, product lead for a seed-stage AI tool</p>
+        </div>
+      </section>
+
+      <section id="pricing" class="container section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Pricing</p>
+            <h2>Pick the depth of website direction.</h2>
+          </div>
+          <p>Use the same style pack system for a quick launch page or a full brand site.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="ui-card pricing-card">
+            <p class="eyebrow">For quick concept validation</p>
+            <h3>Sketch</h3>
+            <div class="price">$0</div>
+            <p>One-page structure, core style pack, and hero proof direction.</p>
+            <a class="ui-button ui-button-secondary" href="#cta">Start sketch</a>
+          </article>
+          <article class="ui-card pricing-card">
+            <p class="eyebrow">Best for public launches</p>
+            <h3>Launch Room</h3>
+            <div class="price">$49</div>
+            <p>Full website sections, proof strategy, pricing, FAQ, and CTA behavior.</p>
+            <a class="ui-button ui-button-primary" href="#cta">Build launch page</a>
+          </article>
+          <article class="ui-card pricing-card">
+            <p class="eyebrow">For repeatable site families</p>
+            <h3>Brand System</h3>
+            <div class="price">Custom</div>
+            <p>Reusable section library, visual directions, and quality gates.</p>
+            <a class="ui-button ui-button-secondary" href="#cta">Plan system</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" class="container section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">FAQ</p>
+            <h2>Questions that stop generic websites.</h2>
+          </div>
+          <p>The system forces specificity before visual polish.</p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item"><strong>Does this replace a designer?</strong><p>No. It gives an AI agent a stronger design process so the first artifact is more useful.</p></div>
+          <div class="faq-item"><strong>Can the same template create different sites?</strong><p>Yes. Structure is stable, but style pack decisions change typography, sections, proof, and component behavior.</p></div>
+          <div class="faq-item"><strong>What makes it website-specific?</strong><p>It prioritizes visitor story, proof, conversion, and brand memory before visual decoration.</p></div>
+          <div class="faq-item"><strong>How do I extend it?</strong><p>Add new website sections, aesthetic directions, or style packs without rewriting the core skill.</p></div>
+        </div>
+      </section>
+
+      <section id="cta" class="container section">
+        <div class="cta-band">
+          <div>
+            <p class="eyebrow">No fixed theme lock-in</p>
+            <h2>Design the website before you decorate it.</h2>
+            <p>Generate a style pack, section strategy, and HTML page that all point at the same visitor story.</p>
+          </div>
+          <a class="ui-button ui-button-primary" href="#">Preview website system</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <div>
+        <strong>Signal Edition</strong>
+        <p>A website-first HTML design skill for section-level style systems.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#proof">Proof</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#cta">Request a site review</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

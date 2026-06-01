@@ -1,0 +1,55 @@
+id: hero
+version: 1.0.0
+kind: component-recipe
+role: "first impression and orientation"
+summary: "Hero sections must reveal product, value, action, and a memorable design point."
+anatomy:
+  - "headline"
+  - "supporting copy"
+  - "primary action"
+  - "secondary action or proof"
+  - "product signal or media"
+  - "next-section hint"
+variants:
+  - "product-hero"
+  - "campaign"
+  - "editorial-cover"
+  - "brand-story"
+  - "commerce-product"
+tokens_consumed:
+  color:
+    - "background"
+    - "text"
+    - "accent"
+    - "surface"
+  typography:
+    - "display"
+    - "body"
+  spacing:
+    - "section"
+state_matrix:
+  default: "Product and action are clear."
+  hover: "CTA and preview hotspots respond."
+  loading: "Only for live demos or embedded previews."
+style_behavior:
+  quiet-saas:
+    composition: "product preview, buyer proof, and clear conversion over decorative imagery"
+    typography: "confident, compact, value-oriented"
+    detail: "show the actual website offer, product outcome, or proof moment with realistic copy"
+  editorial-premium:
+    composition: "strong editorial arrangement, image/product as first signal"
+    typography: "distinctive and memorable"
+    detail: "one bold layout move: scale contrast, crop, rule system, or cover-like framing"
+responsive_rules:
+  - "First viewport should reveal a hint of the next section."
+  - "Do not let hero text overlap media on mobile."
+  - "Avoid viewport-scaled font sizes."
+accessibility_rules:
+  - "Use h1 for the main page headline."
+  - "Do not place long critical copy over busy images."
+anti_patterns:
+  - "Abstract gradient hero with no product signal."
+  - "Huge first viewport that hides all proof."
+  - "Headline that says nothing specific."
+exceed_expectations:
+  - "Make the product preview prove the claim instead of merely decorating the page."

@@ -1,0 +1,49 @@
+id: quiet-saas
+version: 2.0.0
+kind: aesthetic-direction
+summary: "Calm, precise SaaS website direction for explaining a product and converting serious buyers."
+use_when:
+  - "The user wants a SaaS landing page, product website, pricing page, feature page, or B2B campaign site."
+  - "Visitors need to understand value, compare plans, trust proof, and take a clear next step."
+avoid_when:
+  - "The page needs expressive campaign drama or strong art direction."
+intent:
+  emotional_quality: "calm, reliable, focused"
+  work_quality: "fast understanding, predictable conversion path, low friction"
+  visual_energy: "low to medium"
+  density_bias: "medium"
+memory_point_prompts:
+  - "What precise product promise will visitors remember?"
+  - "Can the website feel trustworthy without becoming visually generic?"
+  - "Can proof and pricing answer real buyer doubts instead of decorating the page?"
+token_rules:
+  color:
+    background: "near-neutral or softly tinted neutral, low saturation"
+    surface: "clear contrast from background without heavy shadow"
+    accent: "one confident product color; blue is allowed but not required"
+    status: "muted but legible; pair color with text"
+  typography:
+    heading: "clear, confident, not oversized"
+    body: "high legibility; system or product-like sans is acceptable"
+    numerals: "visually aligned for pricing, proof, and plan comparisons"
+  spacing:
+    rhythm: "4px or 8px grid"
+    page: "efficient, not cramped"
+    component: "compact enough for repeated use"
+  radius:
+    rule: "4px to 10px; restrained and consistent"
+  shadow:
+    rule: "border-first; shadows mostly for overlays, drawers, menus"
+  motion:
+    rule: "subtle feedback; no decorative motion that slows work"
+component_tendencies:
+  button: "clear primary action, restrained hover, strong focus ring"
+  card: "low elevation, strong title/value hierarchy, avoid repeated identical boxes"
+  proof: "specific customer proof, source notes, and credible context"
+  pricing: "fit cues and tradeoffs visible before action"
+  form: "clear labels, helper text, short lead capture, confidence detail"
+  nav: "predictable, compact, active section and conversion action obvious"
+anti_patterns:
+  - "A vague SaaS hero with no product signal or proof."
+  - "Blue-white-gray sameness with no product-specific memory point."
+  - "Every section framed as an identical card."

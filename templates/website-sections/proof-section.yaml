@@ -1,0 +1,18 @@
+﻿id: proof-section
+version: 1.0.0
+kind: website-section
+role: "credibility"
+use_when:
+  - "The visitor needs evidence before trusting the offer."
+required_elements:
+  - "proof headline or label"
+  - "logos, metrics, source notes, case snippets, or certifications"
+  - "context explaining why proof matters"
+style_behavior:
+  quiet-saas: "Trust strip with concrete metrics, customer segments, or operational results."
+  editorial-premium: "Proof can be presented like pull quotes, citations, or numbered evidence."
+  technical-product: "Proof can include benchmarks, uptime, GitHub stars, API latency, or eval results if true."
+anti_patterns:
+  - "Fake metrics without source or time window."
+  - "Logo wall with no context."
+

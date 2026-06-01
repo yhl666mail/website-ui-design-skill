@@ -1,0 +1,19 @@
+﻿id: feature-section
+version: 1.0.0
+kind: website-section
+role: "explanation"
+use_when:
+  - "The site needs to explain capabilities, benefits, or differentiators."
+required_elements:
+  - "section headline"
+  - "2-4 feature outcomes"
+  - "proof, example, or product detail for each outcome"
+  - "visual rhythm different from neighboring sections"
+style_behavior:
+  quiet-saas: "Outcome-first feature cards with concise proof and restrained icons."
+  editorial-premium: "Feature explanations can read like editorial chapters with strong type and asymmetry."
+  technical-product: "Feature rows can include technical artifacts, logs, snippets, or state labels when relevant."
+anti_patterns:
+  - "Interchangeable feature cards with generic copy."
+  - "Icons that do not clarify the feature."
+

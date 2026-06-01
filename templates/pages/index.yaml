@@ -1,0 +1,19 @@
+templates:
+  - id: landing-page
+    file: pages/landing-page.yaml
+    summary: "Marketing or launch page for explaining value and driving conversion."
+  - id: product-page
+    file: pages/product-page.yaml
+    summary: "Public product website page with hero, product proof, features, pricing, FAQ, and CTA."
+  - id: brand-site
+    file: pages/brand-site.yaml
+    summary: "Public brand website with strong identity, story, proof, and conversion path."
+  - id: portfolio-site
+    file: pages/portfolio-site.yaml
+    summary: "Public portfolio or personal site with work, proof, story, and contact path."
+  - id: event-page
+    file: pages/event-page.yaml
+    summary: "Public event or campaign page with schedule, speakers, venue, proof, and registration."
+  - id: ecommerce-product-page
+    file: pages/ecommerce-product-page.yaml
+    summary: "Public commerce product page with product media, benefits, variants, proof, FAQ, and purchase CTA."

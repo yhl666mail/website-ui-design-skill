@@ -1,0 +1,69 @@
+﻿id: card
+version: 1.0.0
+kind: component-recipe
+role: "grouping"
+summary: "Cards group related content only when the boundary helps scanning or interaction."
+anatomy:
+  - "container"
+  - "header or label"
+  - "primary content"
+  - "secondary metadata"
+  - "optional action"
+  - "optional status"
+variants:
+  - "summary"
+  - "record"
+  - "tool"
+  - "preview"
+  - "callout"
+tokens_consumed:
+  color:
+    - "surface"
+    - "surface_alt"
+    - "border"
+    - "text"
+    - "muted"
+  radius:
+    - "panel"
+  shadow:
+    - "panel"
+    - "overlay"
+  spacing:
+    - "card_padding"
+state_matrix:
+  default: "Boundary supports content hierarchy."
+  hover: "Only if clickable or inspectable."
+  focus: "Visible when card acts as link or button."
+  selected: "Persistent outline, side bar, or checked marker."
+  loading: "Skeleton preserves content shape."
+  error: "Inline recovery or status region."
+style_behavior:
+  quiet-saas:
+    surface: "border-first, low shadow, subtle header separation"
+    spacing: "compact but breathable"
+    hierarchy: "small label, strong value/title, useful metadata"
+    detail: "use a top status row or right-aligned metadata instead of decoration"
+  editorial-premium:
+    surface: "fewer cards; larger editorial groupings; sometimes no visible container"
+    spacing: "generous, with strong alignment"
+    hierarchy: "typographic contrast and composition carry the card"
+    detail: "card can feel like a clipping, plate, or framed exhibit if relevant"
+  technical-product:
+    surface: "panel-like with crisp dividers and metadata slots"
+    spacing: "dense; label rows and trace details allowed"
+    hierarchy: "title plus machine-readable metadata"
+    detail: "include timestamp, run ID, environment, or health marker when meaningful"
+responsive_rules:
+  - "Repeated cards need stable min widths and predictable wrapping."
+  - "Do not create card grids with text that overflows on narrow screens."
+  - "Clickable cards need large safe hit areas."
+accessibility_rules:
+  - "Do not make nested interactive controls fight with clickable card containers."
+  - "Use headings for card titles in content-heavy cards."
+anti_patterns:
+  - "Cards inside cards without functional boundary."
+  - "Every page section placed in a floating card."
+  - "Hover affordance on non-clickable cards."
+exceed_expectations:
+  - "Make one card detail domain-specific: SLA risk, confidence score, version drift, payment window, queue age, or owner."
+

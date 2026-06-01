@@ -1,0 +1,77 @@
+﻿id: button
+version: 1.0.0
+kind: component-recipe
+role: "action"
+summary: "Buttons express action priority and interaction confidence."
+anatomy:
+  - "label"
+  - "optional leading icon"
+  - "optional trailing icon"
+  - "loading indicator"
+  - "focus ring"
+  - "pressed or selected state when toggle-like"
+variants:
+  - "primary"
+  - "secondary"
+  - "tertiary"
+  - "destructive"
+  - "icon"
+  - "segmented"
+tokens_consumed:
+  color:
+    - "action background"
+    - "action foreground"
+    - "border"
+    - "focus"
+    - "danger"
+  size:
+    - "control_sm"
+    - "control_md"
+    - "control_lg"
+  radius:
+    - "control"
+  motion:
+    - "duration_fast"
+    - "ease_standard"
+state_matrix:
+  default: "Clear affordance and priority."
+  hover: "Visible but not layout-shifting."
+  focus: "Keyboard-visible, high contrast, outside the button edge."
+  active: "Pressed feedback through slight inset, contrast, or transform."
+  selected: "Persistent state, stronger than hover."
+  disabled: "Dimmed with preserved label readability."
+  loading: "Keeps width stable and prevents duplicate action."
+style_behavior:
+  quiet-saas:
+    shape: "moderate radius, compact height, stable padding"
+    surface: "solid accent for primary; border or quiet fill for secondary"
+    typography: "medium weight, sentence case"
+    motion: "brightness or border change only"
+    detail: "secondary actions can include keyboard-hint style metadata for power users"
+  editorial-premium:
+    shape: "can be sharper, pill-like, or typographic depending on composition"
+    surface: "high contrast or inverse; fewer variants"
+    typography: "strong label rhythm; uppercase only if brand supports it"
+    motion: "underline, wipe, or subtle reveal can be memorable"
+    detail: "primary CTA can echo the page's editorial rule or divider treatment"
+  technical-product:
+    shape: "compact, command-like, sharper corners"
+    surface: "system accent for primary; dark panel fill or outline for secondary"
+    typography: "clear label; monospace only for command snippets or hotkeys"
+    motion: "fast state feedback, no decorative easing"
+    detail: "buttons can expose command verbs like Run, Inspect, Retry, Promote"
+responsive_rules:
+  - "Keep touch targets at least 44px on mobile when practical."
+  - "Icon-only buttons require accessible labels and tooltips in app-like UI."
+  - "Button groups should wrap or become segmented controls, not overflow awkwardly."
+accessibility_rules:
+  - "Use button elements for actions."
+  - "Do not indicate destructive action by color alone."
+  - "Loading buttons should expose busy state in real apps."
+anti_patterns:
+  - "All actions have equal visual weight."
+  - "Icon-only primary action without label."
+  - "Hover changes size or shifts neighboring content."
+exceed_expectations:
+  - "Add one contextual micro-state: queued, syncing, copied, saved, retrying, or pending approval."
+

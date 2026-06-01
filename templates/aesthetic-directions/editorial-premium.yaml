@@ -1,0 +1,48 @@
+id: editorial-premium
+version: 2.0.0
+kind: aesthetic-direction
+summary: "Composed, memorable, brand-forward UI with editorial hierarchy."
+use_when:
+  - "The user needs a landing page, campaign, portfolio, product launch, event page, or premium brand moment."
+  - "The interface should be remembered for composition, typography, and tone."
+avoid_when:
+  - "The screen is a high-density admin workflow where speed matters more than brand expression."
+intent:
+  emotional_quality: "confident, curated, distinctive"
+  work_quality: "clear storytelling and strong visual sequence"
+  visual_energy: "medium to high"
+  density_bias: "low to medium"
+memory_point_prompts:
+  - "What single visual composition will the user remember?"
+  - "Can the product itself become the hero instead of an abstract decoration?"
+  - "Can typography create a signature without harming readability?"
+token_rules:
+  color:
+    background: "warm neutral, deep dark, or high-confidence brand field"
+    surface: "used sparingly; not every section needs a panel"
+    accent: "sharp and intentional; can be high contrast"
+    status: "quieter than brand accents unless status is central"
+  typography:
+    heading: "distinctive display or strong editorial treatment"
+    body: "refined, readable pairing"
+    numerals: "can be large and graphic when metrics are proof"
+  spacing:
+    rhythm: "larger section rhythm with disciplined alignment"
+    page: "generous but not empty"
+    component: "components can breathe; controls still need clear affordance"
+  radius:
+    rule: "0px to 12px based on brand; corners should feel intentional"
+  shadow:
+    rule: "composition first; shadows only when depth supports the story"
+  motion:
+    rule: "one memorable reveal or hover behavior, not scattered effects"
+component_tendencies:
+  button: "high-contrast, typographic, sometimes more rectangular"
+  card: "fewer cards, more editorial grouping and asymmetry"
+  table: "curated comparison, more whitespace, fewer grid lines"
+  form: "minimal fields with strong labels and refined feedback"
+  nav: "simple and brand-aware; avoid heavy app chrome"
+anti_patterns:
+  - "Luxury styling without concrete product proof."
+  - "Huge typography inside cramped components."
+  - "Decorative image treatment that hides what the product does."

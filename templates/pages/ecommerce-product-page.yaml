@@ -1,0 +1,32 @@
+id: ecommerce-product-page
+version: 1.0.0
+kind: page
+summary: "A public commerce product page that supports evaluation and purchase."
+use_when:
+  - "The user asks for a product detail page, ecommerce page, shop page, or sales page."
+avoid_when:
+  - "The offer is a service with no product, package, or purchase path."
+audience:
+  - "buyers"
+  - "gift shoppers"
+  - "product evaluators"
+density: medium
+goals:
+  - "Show the real product clearly."
+  - "Explain benefits, variants, price, proof, shipping, and FAQ."
+  - "Make purchase or inquiry action obvious."
+required_sections:
+  - "site-header"
+  - "website-hero"
+  - "proof-section"
+  - "feature-section"
+  - "pricing-section"
+  - "faq-section"
+  - "cta-section"
+  - "site-footer"
+compatible_aesthetic_directions:
+  - "editorial-premium"
+  - "quiet-saas"
+anti_patterns:
+  - "Product page with atmospheric imagery but no inspectable product signal."
+  - "Purchase CTA detached from price, variant, or trust details."

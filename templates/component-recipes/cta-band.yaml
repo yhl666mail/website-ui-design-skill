@@ -1,0 +1,31 @@
+﻿id: cta-band
+version: 1.0.0
+kind: component-recipe
+role: "website conversion"
+summary: "CTA sections focus the visitor on one concrete next step."
+anatomy:
+  - "conversion headline"
+  - "supporting risk reducer"
+  - "primary action"
+  - "optional secondary action"
+state_matrix:
+  default: "One action is dominant and copy is specific."
+  hover: "CTA hover strengthens confidence without distraction."
+  focus: "CTA focus is prominent."
+  loading: "Lead-capture action preserves label width."
+style_behavior:
+  quiet-saas:
+    detail: "Use demo, trial, or consultation reassurance."
+  editorial-premium:
+    detail: "Use a memorable closing line and restrained action treatment."
+  technical-product:
+    detail: "Use install, docs, deploy, demo, or API key next step."
+responsive_rules:
+  - "CTA and proof note stack cleanly on mobile."
+accessibility_rules:
+  - "CTA label must describe the actual next action."
+anti_patterns:
+  - "Generic 'Get started' with no context."
+exceed_expectations:
+  - "Add a risk reducer: no credit card, 14-day trial, migration help, docs preview, or reply time."
+

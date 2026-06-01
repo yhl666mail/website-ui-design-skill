@@ -1,0 +1,31 @@
+id: portfolio-site
+version: 1.0.0
+kind: page
+summary: "A public portfolio or personal site that presents work, credibility, and contact."
+use_when:
+  - "The user asks for a portfolio, personal website, studio site, or creator homepage."
+avoid_when:
+  - "The user needs product pricing or an internal tool."
+audience:
+  - "clients"
+  - "recruiters"
+  - "collaborators"
+density: medium
+goals:
+  - "Show the person's or studio's identity quickly."
+  - "Make work samples easy to inspect."
+  - "Turn credibility into contact."
+required_sections:
+  - "site-header"
+  - "website-hero"
+  - "feature-section"
+  - "proof-section"
+  - "testimonial-section"
+  - "cta-section"
+  - "site-footer"
+compatible_aesthetic_directions:
+  - "editorial-premium"
+  - "quiet-saas"
+anti_patterns:
+  - "Portfolio with no visible work in the first meaningful scroll."
+  - "Overdesigned page that hides the creator's actual output."

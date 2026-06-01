@@ -1,0 +1,32 @@
+﻿id: site-footer
+version: 1.0.0
+kind: component-recipe
+role: "website closure"
+summary: "Footer closes the page with trust, navigation, and contact confidence."
+anatomy:
+  - "brand statement"
+  - "grouped links"
+  - "contact or social route"
+  - "legal links"
+  - "optional newsletter or trust note"
+state_matrix:
+  default: "Footer groups links and reinforces trust."
+  hover: "Links show clear hover state."
+  focus: "Footer links have visible focus."
+  submitted: "Newsletter/contact state confirms next step when present."
+style_behavior:
+  quiet-saas:
+    detail: "Organized links with security, docs, status, and support."
+  editorial-premium:
+    detail: "Footer feels like an editorial closing note."
+  technical-product:
+    detail: "Footer includes docs, GitHub, changelog, security, API, and status where relevant."
+responsive_rules:
+  - "Footer link groups stack with clear headings."
+accessibility_rules:
+  - "Use real links and visible labels."
+anti_patterns:
+  - "Footer link dump without grouping."
+exceed_expectations:
+  - "Include one confidence detail: response time, security policy, location, open-source link, or support route."
+

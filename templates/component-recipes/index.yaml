@@ -1,0 +1,37 @@
+templates:
+  - id: site-header
+    file: component-recipes/site-header.yaml
+    summary: "Public website header, masthead, navigation, and visitor CTA."
+  - id: button
+    file: component-recipes/button.yaml
+    summary: "Primary, secondary, destructive, icon, and segmented actions."
+  - id: card
+    file: component-recipes/card.yaml
+    summary: "Website content cards, proof units, outcome cards, editorial plates, and repeated section items."
+  - id: form
+    file: component-recipes/form.yaml
+    summary: "Lead capture, newsletter, contact, waitlist, checkout-adjacent, and validation surfaces."
+  - id: hero
+    file: component-recipes/hero.yaml
+    summary: "First-viewport orientation and product signal."
+  - id: feature-section
+    file: component-recipes/feature-section.yaml
+    summary: "Website feature sections with outcome, proof, and visual rhythm."
+  - id: proof-strip
+    file: component-recipes/proof-strip.yaml
+    summary: "Trust logos, metrics, source notes, certifications, and proof points."
+  - id: testimonial
+    file: component-recipes/testimonial.yaml
+    summary: "Customer quotes, case-study snippets, and human proof."
+  - id: faq
+    file: component-recipes/faq.yaml
+    summary: "Website objection handling and buying confidence."
+  - id: cta-band
+    file: component-recipes/cta-band.yaml
+    summary: "Focused conversion section with risk reducer."
+  - id: site-footer
+    file: component-recipes/site-footer.yaml
+    summary: "Public website footer, trust links, contact, and closure."
+  - id: pricing-card
+    file: component-recipes/pricing-card.yaml
+    summary: "Plan cards, comparisons, billing toggles, and conversion actions."

@@ -1,0 +1,18 @@
+﻿id: testimonial-section
+version: 1.0.0
+kind: website-section
+role: "social proof"
+use_when:
+  - "The site needs a human endorsement or case-study voice."
+required_elements:
+  - "quote or case-study summary"
+  - "person, role, company, or context"
+  - "specific result or before/after detail"
+style_behavior:
+  quiet-saas: "Short, credible quotes with role and measurable result."
+  editorial-premium: "Large pull quote with elegant citation and story context."
+  technical-product: "Practitioner quote with stack, scale, or migration detail."
+anti_patterns:
+  - "Anonymous vague praise."
+  - "Overly long quote that blocks scanning."
+

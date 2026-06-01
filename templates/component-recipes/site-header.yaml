@@ -1,0 +1,33 @@
+﻿id: site-header
+version: 1.0.0
+kind: component-recipe
+role: "website orientation"
+summary: "Public website header that establishes brand, navigation, and primary visitor action."
+anatomy:
+  - "brand mark or wordmark"
+  - "primary nav links"
+  - "primary CTA"
+  - "optional trust/status link"
+  - "mobile menu behavior"
+state_matrix:
+  default: "Brand and navigation are visible without overpowering the hero."
+  hover: "Links show clear hover feedback without layout shift."
+  focus: "Keyboard focus is visible on links and CTA."
+  sticky: "Sticky header remains compact and does not cover content."
+style_behavior:
+  quiet-saas:
+    detail: "Header emphasizes demo, pricing, and product clarity."
+  editorial-premium:
+    detail: "Header behaves like a masthead with fewer links and stronger typography."
+  technical-product:
+    detail: "Header can include docs, GitHub, changelog, status, or API links for technical sites."
+responsive_rules:
+  - "Collapse into a labeled menu on mobile."
+  - "Keep brand and primary CTA reachable."
+accessibility_rules:
+  - "Use a nav landmark and text labels."
+anti_patterns:
+  - "Too many links before the offer is understood."
+exceed_expectations:
+  - "Expose one context cue visitors care about: launch status, demo availability, docs, event date, or support promise."
+

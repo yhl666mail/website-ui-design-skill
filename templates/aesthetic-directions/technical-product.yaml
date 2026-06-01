@@ -1,0 +1,51 @@
+id: technical-product
+version: 1.0.0
+kind: aesthetic-direction
+summary: "Trustworthy technical product website direction for APIs, AI tools, infrastructure, developer platforms, and open-source projects."
+use_when:
+  - "The website sells or explains a technical product, API, AI tool, open-source project, infrastructure service, developer platform, or automation product."
+  - "Visitors need to inspect credibility through docs links, examples, benchmarks, integration details, security claims, or real product states."
+avoid_when:
+  - "The audience is broad consumer and technical chrome would make the offer feel intimidating."
+  - "The request is for an internal console, dashboard, admin panel, or operational workspace instead of a public website."
+intent:
+  emotional_quality: "capable, exact, transparent"
+  work_quality: "fast trust-building, proof-rich explanation, clear technical next step"
+  visual_energy: "medium"
+  density_bias: "medium"
+memory_point_prompts:
+  - "What technical proof should visitors remember after one scroll?"
+  - "Can the page show real product behavior without pretending to be an app dashboard?"
+  - "Can docs, install, benchmark, or integration cues make the website feel immediately credible?"
+token_rules:
+  color:
+    background: "clear neutral or dark technical shell only when contrast stays excellent"
+    surface: "crisp sections with purposeful dividers, not dense nested panels"
+    accent: "system-like action color; avoid neon overload"
+    status: "semantic labels only when they explain product behavior or proof"
+  typography:
+    heading: "compact technical sans or restrained editorial sans"
+    body: "legible at marketing and documentation-adjacent sizes"
+    monospace: "use for commands, API names, file paths, code, or identifiers only"
+  spacing:
+    rhythm: "4px or 8px grid"
+    page: "scan-friendly sections with enough room for explanations"
+    component: "metadata-friendly but still visitor-facing"
+  radius:
+    rule: "3px to 8px; sharper when the product is infrastructure-heavy"
+  shadow:
+    rule: "minimal; use borders, contrast, and layer tokens"
+  motion:
+    rule: "fast purposeful state transitions; no decorative terminal animation"
+component_tendencies:
+  site_header: "include docs, GitHub, changelog, status, or security links only when relevant"
+  hero: "show install command, API example, product trace, benchmark, or integration proof as website evidence"
+  feature: "pair feature claims with artifacts such as snippets, before/after states, or proof captions"
+  proof: "use benchmarks, adoption, evals, uptime, GitHub stars, or security claims only when sourced"
+  pricing: "make usage limits, environments, seats, API calls, retention, and support boundaries clear"
+  faq: "answer integration, security, data, hosting, model, or migration objections"
+anti_patterns:
+  - "Fake terminal text as wallpaper."
+  - "A public website that looks like an internal monitoring console."
+  - "Low-contrast dark surfaces."
+  - "Neon gradients and glow-heavy UI unrelated to product evidence."

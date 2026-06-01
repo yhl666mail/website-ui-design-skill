@@ -1,0 +1,37 @@
+﻿id: product-page
+version: 1.0.0
+kind: page
+summary: "A public product website page that explains an offer and converts visitors."
+use_when:
+  - "The user asks for a product website, SaaS landing page, launch page, or public product page."
+avoid_when:
+  - "The user asks for an internal dashboard, admin tool, or app workspace."
+audience:
+  - "buyers"
+  - "founders"
+  - "operators"
+  - "product evaluators"
+density: medium
+goals:
+  - "Make the product, audience, and value clear in the first viewport."
+  - "Show proof before asking for commitment."
+  - "Explain features as outcomes."
+  - "Handle objections and close with a concrete CTA."
+required_sections:
+  - "site-header"
+  - "website-hero"
+  - "feature-section"
+  - "proof-section"
+  - "pricing-section"
+  - "faq-section"
+  - "cta-section"
+  - "site-footer"
+compatible_aesthetic_directions:
+  - "quiet-saas"
+  - "editorial-premium"
+  - "technical-product"
+anti_patterns:
+  - "Dashboard layout masquerading as a website."
+  - "Hero with no product or offer signal."
+  - "Feature cards with interchangeable generic copy."
+

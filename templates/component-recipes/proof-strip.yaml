@@ -1,0 +1,31 @@
+﻿id: proof-strip
+version: 1.0.0
+kind: component-recipe
+role: "website credibility"
+summary: "Proof sections build trust with context, source, and specificity."
+anatomy:
+  - "proof label"
+  - "logos, metrics, awards, benchmarks, or source notes"
+  - "context line"
+  - "optional link to proof"
+state_matrix:
+  default: "Proof is legible and connected to the offer."
+  hover: "Linked proof reveals source or case-study direction."
+  focus: "Linked proof has clear focus."
+  loading: "Logo or metric area preserves rhythm while assets load."
+style_behavior:
+  quiet-saas:
+    detail: "Use concrete metrics with source and time window."
+  editorial-premium:
+    detail: "Use citations, pull stats, and refined spacing."
+  technical-product:
+    detail: "Use benchmarks, stars, latency, uptime, evals, or security proof only if true."
+responsive_rules:
+  - "Logo/proof grids wrap without tiny unreadable marks."
+accessibility_rules:
+  - "Logo-only proof needs text context."
+anti_patterns:
+  - "Fake metrics or anonymous logos."
+exceed_expectations:
+  - "Add source, time window, or segment context to every important proof point."
+

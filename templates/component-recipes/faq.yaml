@@ -1,0 +1,30 @@
+﻿id: faq
+version: 1.0.0
+kind: component-recipe
+role: "objection handling"
+summary: "FAQ sections reduce buying or trust risk with specific answers."
+anatomy:
+  - "question"
+  - "answer"
+  - "optional link or action"
+state_matrix:
+  default: "Questions are specific and answers are concise."
+  hover: "Interactive rows show affordance."
+  focus: "Accordion controls have visible focus."
+  expanded: "Expanded answer preserves reading rhythm."
+style_behavior:
+  quiet-saas:
+    detail: "Answer setup, security, pricing, support, and migration concerns."
+  editorial-premium:
+    detail: "Use concise editorial answers and calm section rhythm."
+  technical-product:
+    detail: "Answer API, hosting, data, models, integrations, and limits."
+responsive_rules:
+  - "Avoid two-column FAQ on narrow screens."
+accessibility_rules:
+  - "Accordion buttons must expose expanded state in real apps."
+anti_patterns:
+  - "FAQ as repeated marketing slogans."
+exceed_expectations:
+  - "Each answer should remove one real objection or explain one tradeoff."
+

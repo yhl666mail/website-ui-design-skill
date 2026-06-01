@@ -1,0 +1,74 @@
+﻿id: form
+version: 1.0.0
+kind: component-recipe
+role: "data entry and configuration"
+summary: "Forms collect input, explain consequences, and recover from mistakes."
+anatomy:
+  - "field group"
+  - "label"
+  - "input/select/textarea/toggle"
+  - "helper text"
+  - "validation message"
+  - "save/cancel actions"
+  - "dirty state"
+variants:
+  - "profile"
+  - "settings"
+  - "checkout"
+  - "filter"
+  - "onboarding"
+  - "integration-config"
+tokens_consumed:
+  color:
+    - "surface"
+    - "field"
+    - "border"
+    - "focus"
+    - "danger"
+    - "success"
+  size:
+    - "control_md"
+  radius:
+    - "control"
+  spacing:
+    - "field_gap"
+state_matrix:
+  default: "Label and value relationship is obvious."
+  hover: "Optional, restrained."
+  focus: "Strong visible ring or border."
+  filled: "Value remains clear; label is not lost."
+  invalid: "Message identifies problem and expected format."
+  disabled: "Readable, non-interactive, reason shown when important."
+  loading: "Save area preserves layout."
+  success: "Confirms saved state without permanent clutter."
+style_behavior:
+  quiet-saas:
+    layout: "grouped sections, compact labels, clear helper text"
+    controls: "bordered or lightly filled fields"
+    validation: "inline and practical"
+    detail: "show last saved time or affected workspace for trust"
+  editorial-premium:
+    layout: "fewer fields per view, stronger labels, more whitespace"
+    controls: "minimal but legible; avoid fragile placeholder-only style"
+    validation: "refined but explicit"
+    detail: "confirmation can feel like a polished receipt or note"
+  technical-product:
+    layout: "configuration panels, defaults, environment scope"
+    controls: "compact fields; monospace for keys, URLs, IDs"
+    validation: "technical and actionable"
+    detail: "include test connection, copied token, dry-run, or config diff states"
+responsive_rules:
+  - "Stack labels and controls on mobile."
+  - "Keep submit controls reachable and not hidden below long forms."
+  - "Avoid multi-column forms when field relationships are sequential."
+accessibility_rules:
+  - "Every field needs a label."
+  - "Do not use placeholder as the only label."
+  - "Associate error messages with controls in production code."
+anti_patterns:
+  - "No validation state."
+  - "Save button far away from changed fields."
+  - "Risky settings without consequence copy."
+exceed_expectations:
+  - "Include a domain-specific safety affordance: preview, test, dry run, undo window, or permission scope."
+

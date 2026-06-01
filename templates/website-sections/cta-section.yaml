@@ -1,0 +1,18 @@
+﻿id: cta-section
+version: 1.0.0
+kind: website-section
+role: "conversion"
+use_when:
+  - "The page needs a focused final or mid-page action."
+required_elements:
+  - "specific next-step headline"
+  - "CTA"
+  - "risk reducer or proof note"
+style_behavior:
+  quiet-saas: "Low-friction action with demo, trial, or contact reassurance."
+  editorial-premium: "Confident, memorable closing statement with strong typographic treatment."
+  technical-product: "Clear technical next step such as install, read docs, deploy, or run demo."
+anti_patterns:
+  - "Generic 'Get started today' without context."
+  - "Too many competing actions."
+

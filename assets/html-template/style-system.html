@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta.name}} Style System</title>
+  <style>
+    {{generated.css_variables}}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      color-scheme: {{generated.color_scheme}};
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--color-background);
+      color: var(--color-text);
+      font-family: var(--typography-font-body);
+      font-size: var(--typography-body-size);
+      line-height: 1.5;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .style-page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: var(--spacing-page) 0 64px;
+    }
+
+    .style-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: var(--spacing-section);
+      align-items: stretch;
+      margin-bottom: var(--spacing-section);
+    }
+
+    .style-title {
+      margin: 0;
+      font-family: var(--typography-font-display);
+      font-size: clamp(34px, 5vw, 68px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      font-weight: var(--typography-heading-weight);
+    }
+
+    .style-subtitle {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--color-muted);
+      font-size: 16px;
+    }
+
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-5 {
+      grid-column: span 5;
+    }
+
+    .span-7 {
+      grid-column: span 7;
+    }
+
+    .span-12 {
+      grid-column: span 12;
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+      color: var(--color-muted);
+      font-size: var(--typography-label-size);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    {{generated.component_css}}
+
+    @media (max-width: 860px) {
+      .style-header,
+      .style-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .span-4,
+      .span-5,
+      .span-7,
+      .span-12 {
+        grid-column: auto;
+      }
+
+      .style-page {
+        width: min(100% - 20px, 680px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="style-page">
+    <section class="style-header">
+      <div class="ui-card ui-hero">
+        <p class="section-label">{{meta.aesthetic_direction}}</p>
+        <h1 class="style-title">{{meta.name}}</h1>
+        <p class="style-subtitle">{{meta.memory_point}}</p>
+        <div class="ui-actions">
+          <button class="ui-button ui-button-primary">Run inspection</button>
+          <button class="ui-button ui-button-secondary">View trace</button>
+        </div>
+      </div>
+      <aside class="ui-card">
+        <p class="section-label">Style pack</p>
+        <dl class="ui-facts">
+          <div><dt>Audience</dt><dd>{{meta.audience}}</dd></div>
+          <div><dt>Density</dt><dd>{{meta.density}}</dd></div>
+          <div><dt>Version</dt><dd>{{meta.version}}</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="style-grid">
+      <div class="span-4 ui-card ui-metric">
+        <p class="section-label">Metric</p>
+        <div class="ui-metric-value">98.7%</div>
+        <p class="ui-muted">Eval pass rate, last 24h</p>
+        <span class="ui-chip">+3.2% vs previous run</span>
+      </div>
+
+      <div class="span-4 ui-card ui-metric">
+        <p class="section-label">Queue</p>
+        <div class="ui-metric-value">14</div>
+        <p class="ui-muted">Runs waiting for review</p>
+        <span class="ui-chip ui-chip-warning">4 need owner action</span>
+      </div>
+
+      <div class="span-4 ui-card ui-empty">
+        <p class="section-label">Empty state</p>
+        <h2>No run logs connected</h2>
+        <p>{{components.empty.next_action}}</p>
+        <button class="ui-button ui-button-secondary">Connect source</button>
+      </div>
+
+      <div class="span-7 ui-card">
+        <div class="ui-card-header">
+          <div>
+            <p class="section-label">Table</p>
+            <h2>Recent workflow runs</h2>
+          </div>
+          <button class="ui-button ui-button-secondary">Export</button>
+        </div>
+        <div class="ui-table-wrap">
+          <table class="ui-table">
+            <thead>
+              <tr>
+                <th>Run</th>
+                <th>Status</th>
+                <th>{{components.table.decision_column}}</th>
+                <th>Owner</th>
+                <th>Age</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>run_84fa</code></td>
+                <td><span class="ui-status success">shipped</span></td>
+                <td>low</td>
+                <td>Design Ops</td>
+                <td>12m</td>
+              </tr>
+              <tr>
+                <td><code>run_91bc</code></td>
+                <td><span class="ui-status warning">queued</span></td>
+                <td>medium</td>
+                <td>AI Platform</td>
+                <td>41m</td>
+              </tr>
+              <tr>
+                <td><code>run_a77d</code></td>
+                <td><span class="ui-status danger">failed</span></td>
+                <td>high</td>
+                <td>Infra</td>
+                <td>1h 08m</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="span-5 ui-card">
+        <p class="section-label">Form</p>
+        <form class="ui-form">
+          <label>
+            Environment
+            <select>
+              <option>Production</option>
+              <option>Staging</option>
+            </select>
+          </label>
+          <label>
+            Webhook URL
+            <input value="https://api.example.com/runs">
+          </label>
+          <p class="ui-muted">{{components.form.safety_detail}}</p>
+          <div class="ui-actions">
+            <button class="ui-button ui-button-primary" type="button">Save config</button>
+            <button class="ui-button ui-button-secondary" type="button">Test</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="span-12 ui-card ui-chat">
+        <p class="section-label">Chat and tool state</p>
+        <div class="ui-message user">Compare the failed run against the last successful release.</div>
+        <div class="ui-message assistant">I found a schema mismatch in the extraction step. The changed artifact count is 3.</div>
+        <div class="ui-tool-call">{{components.chat.metadata}}</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

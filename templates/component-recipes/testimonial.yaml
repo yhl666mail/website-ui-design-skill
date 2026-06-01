@@ -1,0 +1,32 @@
+﻿id: testimonial
+version: 1.0.0
+kind: component-recipe
+role: "human proof"
+summary: "Testimonials should be specific, attributed, and tied to an outcome."
+anatomy:
+  - "quote"
+  - "speaker"
+  - "role or company"
+  - "specific result"
+  - "optional portrait or logo"
+state_matrix:
+  default: "Quote is readable and not too long."
+  hover: "Case-study links reveal action without turning quote into an ad."
+  focus: "Linked testimonial has clear focus."
+  loading: "Portrait/logo loading does not shift quote text."
+style_behavior:
+  quiet-saas:
+    detail: "Use short quotes with measurable outcomes."
+  editorial-premium:
+    detail: "Use pull-quote scale and elegant attribution."
+  technical-product:
+    detail: "Use practitioner context such as stack, scale, or migration result."
+responsive_rules:
+  - "Keep quote line length readable on mobile."
+accessibility_rules:
+  - "Do not embed quote text inside inaccessible images."
+anti_patterns:
+  - "Anonymous generic praise."
+exceed_expectations:
+  - "Include context: before state, after result, role, or use case."
+

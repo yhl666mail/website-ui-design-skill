@@ -1,0 +1,19 @@
+﻿id: site-footer
+version: 1.0.0
+kind: website-section
+role: "closure and trust"
+use_when:
+  - "A public site needs navigation, trust, contact, legal, or continued exploration."
+required_elements:
+  - "brand signal"
+  - "key links"
+  - "contact or social path"
+  - "legal or policy links when relevant"
+style_behavior:
+  quiet-saas: "Organized, quiet, trust-oriented footer with useful product and company links."
+  editorial-premium: "Editorial close with brand statement, issue-style links, and refined spacing."
+  technical-product: "Docs, GitHub, changelog, status, security, and API links when relevant."
+anti_patterns:
+  - "Footer as an afterthought."
+  - "Huge footer link dump without grouping."
+

@@ -1,0 +1,21 @@
+﻿id: site-header
+version: 1.0.0
+kind: website-section
+role: "orientation and navigation"
+use_when:
+  - "A public website needs brand identity, section navigation, and a primary visitor action."
+avoid_when:
+  - "The page is a one-off poster or single-screen artifact with no navigation."
+required_elements:
+  - "brand mark or wordmark"
+  - "primary navigation"
+  - "primary CTA"
+  - "responsive menu behavior"
+style_behavior:
+  quiet-saas: "Compact, trustworthy, product-led, with a clear demo or signup CTA."
+  editorial-premium: "Masthead-like, typographic, fewer links, strong brand presence."
+  technical-product: "Technical product header with docs, changelog, status, or GitHub-style affordances."
+anti_patterns:
+  - "Too many links before the visitor understands the offer."
+  - "Tiny brand signal that makes the first viewport anonymous."
+

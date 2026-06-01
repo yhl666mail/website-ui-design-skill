@@ -1,0 +1,20 @@
+﻿id: pricing-section
+version: 1.0.0
+kind: website-section
+role: "conversion comparison"
+use_when:
+  - "The visitor needs to choose a plan, package, or buying path."
+required_elements:
+  - "plan/package names"
+  - "fit cues"
+  - "price or contact path"
+  - "tradeoffs"
+  - "CTA per option"
+style_behavior:
+  quiet-saas: "Practical plan comparison with one recommended path."
+  editorial-premium: "Edition-like packages with strong fit language."
+  technical-product: "Usage limits, environments, seats, API calls, retention, or support boundaries."
+anti_patterns:
+  - "Three nearly identical pricing cards."
+  - "Recommended plan marked only by color."
+

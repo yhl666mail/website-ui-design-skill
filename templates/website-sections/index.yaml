@@ -1,0 +1,28 @@
+templates:
+  - id: site-header
+    file: website-sections/site-header.yaml
+    summary: "Public website header with brand, navigation, and primary visitor action."
+  - id: website-hero
+    file: website-sections/website-hero.yaml
+    summary: "First-viewport website hero with product, offer, proof, and memory point."
+  - id: feature-section
+    file: website-sections/feature-section.yaml
+    summary: "Outcome-focused feature explanation with proof and visual rhythm."
+  - id: proof-section
+    file: website-sections/proof-section.yaml
+    summary: "Trust, logos, metrics, sources, case-study snippets, or credibility strip."
+  - id: testimonial-section
+    file: website-sections/testimonial-section.yaml
+    summary: "Specific customer proof with source, context, and result."
+  - id: pricing-section
+    file: website-sections/pricing-section.yaml
+    summary: "Plan or package comparison with fit cues and conversion actions."
+  - id: faq-section
+    file: website-sections/faq-section.yaml
+    summary: "Objection handling and decision support."
+  - id: cta-section
+    file: website-sections/cta-section.yaml
+    summary: "Focused conversion section with a concrete next step."
+  - id: site-footer
+    file: website-sections/site-footer.yaml
+    summary: "Website footer for trust, navigation, contact, and closure."

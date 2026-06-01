@@ -1,0 +1,22 @@
+﻿id: website-hero
+version: 1.0.0
+kind: website-section
+role: "first impression and conversion"
+use_when:
+  - "A website needs to explain product, offer, audience, and primary action quickly."
+required_elements:
+  - "specific h1 naming product, category, or offer"
+  - "supporting copy"
+  - "primary CTA"
+  - "secondary proof or action"
+  - "product, place, object, or offer signal"
+  - "hint of next section"
+style_behavior:
+  quiet-saas: "Show the product workflow or outcome clearly with restrained visual treatment."
+  editorial-premium: "Use strong composition, type, and concrete media to create a memorable cover."
+  technical-product: "Show a real technical preview, code, trace, API, or workflow state only if the site sells a technical product."
+anti_patterns:
+  - "Abstract gradient with no product signal."
+  - "Headline that says only 'streamline your workflow'."
+  - "Hero so tall it hides all proof on common screens."
+

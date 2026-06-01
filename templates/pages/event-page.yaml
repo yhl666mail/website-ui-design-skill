@@ -1,0 +1,30 @@
+id: event-page
+version: 1.0.0
+kind: page
+summary: "A public event or campaign page that drives registration or attendance."
+use_when:
+  - "The user asks for an event page, conference page, webinar page, workshop page, or campaign page."
+avoid_when:
+  - "There is no date, audience, registration, or campaign action."
+audience:
+  - "attendees"
+  - "sponsors"
+  - "community members"
+density: medium
+goals:
+  - "Show what, when, where, and why in the first viewport."
+  - "Make registration obvious."
+  - "Provide agenda, speakers, proof, and logistics."
+required_sections:
+  - "site-header"
+  - "website-hero"
+  - "proof-section"
+  - "feature-section"
+  - "faq-section"
+  - "cta-section"
+  - "site-footer"
+compatible_aesthetic_directions:
+  - "editorial-premium"
+  - "quiet-saas"
+anti_patterns:
+  - "Event page without date, location, or registration CTA."
